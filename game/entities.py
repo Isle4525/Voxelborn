@@ -1,10 +1,10 @@
-from typing import List, Tuple
+from typing import List
 from game.constants import ClassType
 
 class Skill:
-    def __init__(self, name: str, damage: Tuple[int, int], cost: int, cooldown: int = 0, description: str = ""):
+    def __init__(self, name: str, damage: int, cost: int, cooldown: int = 0, description: str = ""):
         self.name = name
-        self.damage = damage
+        self.damage = damage  # Теперь это базовое число
         self.cost = cost
         self.cooldown = cooldown
         self.current_cooldown = 0
@@ -20,7 +20,7 @@ class GameObject:
         self.hp = hp
         self.max_mana = mana
         self.mana = mana
-        self.damage = damage
+        self.damage = damage  # Базовый урон
         self.defense = defense
         self.class_type = class_type
         self.skills: List[Skill] = []
